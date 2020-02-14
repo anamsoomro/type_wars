@@ -107,7 +107,7 @@ def incorrect
 end
 
 def game_next
-    $prompt.select("watchu wanna do next?", filter: true) do |action|
+    $prompt.select("make selection", filter: true) do |action|
         action.choice 'play again', -> {select_theme}
         action.choice 'check stats', -> {see_stats}
         action.choice 'exit', -> {exit_game}
@@ -115,7 +115,7 @@ def game_next
 end
 
 def see_stats
-    $prompt.select($pastel.yellow("Make Your Selection"), filter: true) do |stat|
+    $prompt.select($pastel.yellow("make selection"), filter: true) do |stat|
         stat.choice 'your high score', -> {my_high_score}
         stat.choice 'your rankng', -> {my_global_rank}
         stat.choice 'high scores', -> {User.top_3}
@@ -128,7 +128,7 @@ def see_stats
 end
 
 def stat_next
-    $prompt.select($pastel.yellow("Watchu Wanna Do Next?"), filter: true) do |action|
+    $prompt.select($pastel.yellow("make selection"), filter: true) do |action|
         action.choice 'go back', -> {see_stats}
         action.choice 'play game', -> {select_theme}
         action.choice 'exit', -> {exit_game}
@@ -155,8 +155,7 @@ end
 
 def exit_game
     puts $pastel.yellow($font.write("                                           GOOD"))
-    puts $prompt.say("                                                   YO DAWG, THANKS FOR PLAYING!")
-    puts $pastel.yellow($font.write("                                  BYE    (^_^)"))
+    puts $pastel.yellow($font.write("                                            BYE"))
     User.clean_users
     stop_music_at_exit
     exit
@@ -178,7 +177,6 @@ end
 def play
     play_music('music/star_wars_theme.mp3')
     puts $pastel.yellow($font.write("                                           TYPE"))
-    puts $prompt.say("                                                          YO DAWG, WELCOME!")
     puts $pastel.yellow($font.write("                                       WARS"))
     user_login
     action
