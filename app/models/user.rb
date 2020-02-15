@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
     has_many :games
     has_many :themes, through: :games
 
-    def self.usernames
-        self.pluck(:username)
+    # def self.usernames
+    #     self.pluck(:username)
+    # end
+
+    def self.alpha_order
+        self.pluck(:username).sort_by{|user| user.downcase}
     end
 
     def high_score
@@ -37,14 +41,12 @@ class User < ActiveRecord::Base
 
         print $pastel.white("3rd #{User.find(top[2].user_id).username} - ") 
         puts $pastel.blue("#{top[2].score} WPM")
-        # puts $pastel.blue("2nd #{User.find(top[1].user_id).username} - #{top[1].score} WPM")
-        # puts $pastel.blue("3rd #{User.find(top[2].user_id).username} - #{top[2].score} WPM")
     end
 
 
     def global_rank
         arr = User.fastest_users
-        puts $pastel.white("You are ranked #{arr.index(self)+1} out of #{arr.length}.")
+        puts $pastel.blue("You are ranked #{arr.index(self)+1} out of #{arr.length}.")
     end
 
 

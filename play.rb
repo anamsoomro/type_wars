@@ -1,8 +1,9 @@
-require 'bundler'
-Bundler.require
+require_relative 'config/environment.rb'
 
-ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/development.db')
-require_all 'app'
-ActiveRecord::Base.logger = nil
-
-play
+if OS.mac?
+    play
+else 
+    require_relative 'run_no_music.rb'
+    # overwrites run file with all references to afplay commented out
+    play
+end

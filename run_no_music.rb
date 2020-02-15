@@ -1,4 +1,4 @@
-require_relative '../config/environment'
+# require_relative 'config/environment'
 
 $prompt = TTY::Prompt.new
 $font = TTY::Font.new(:starwars)
@@ -6,7 +6,7 @@ $pastel = Pastel.new
 
 def play
     system 'clear'
-    play_music('music/star_wars_theme.mp3')
+    # play_music('music/star_wars_theme.mp3')
     title
     user_login
     action
@@ -69,7 +69,7 @@ def new_game
         sleep 1
         puts $pastel.blue("   #{x}...")
     end
-    play_theme_music
+    # play_theme_music
     error = $pastel.red.bold.detach
     words = @current_theme.words.split(", ")
     typed_words = 0
@@ -99,8 +99,8 @@ def new_game
     print $pastel.yellow("YOUR SPEED: ") 
     puts $pastel.blue("#{score} WPM")
     puts $pastel.yellow("TOP SPEED FOR #{@current_theme.name.upcase}: #{@current_theme.high_score.score} WPM")
-    switch_song
-    play_music('music/star_wars_theme.mp3')
+    # switch_song
+    # play_music('music/star_wars_theme.mp3')
     game_next
 end
 
@@ -170,7 +170,7 @@ def exit_game
     system 'clear'
     title
     User.clean_users
-    stop_music_at_exit
+    # stop_music_at_exit
     exit
 end
 
@@ -210,6 +210,8 @@ end
 def stop_music_at_exit
     pid = fork{ system 'killall', 'afplay' }
 end
+
+
 
 
 # update the README
