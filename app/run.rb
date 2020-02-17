@@ -196,6 +196,12 @@ def play_theme_music
     elsif @current_theme.name == "star wars"
         switch_song
         play_music('music/dual_of_fates.mp3')
+    elsif @current_theme.name == "dutch"
+        switch_song
+        play_music('dutch.mp3')
+    elsif @current_theme.name == "americans speaking dutch"
+        switch_song
+        play_music('dutch.mp3')
     end
 end
 

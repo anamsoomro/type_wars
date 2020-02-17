@@ -17,6 +17,8 @@ t4 = Theme.create(name: "coding", words: "ActiveRecord, initialize, origin, attr
 t5 = Theme.create(name: "jibberish", words: "Bzidk!!, aoiemm, boqler, panii, Aoogur, ABHP, PLEWNFO, Poubmu, Aiubg, POAAAA, muaopue, baogun, enoyeu, dsfi, oanve, obtmerm, dosueo, anr, adns, PSFeh, diof, pehte, powow, dshfpw, PITE, AOHRBD")
 t6 = Theme.create(name: "numbers", words: "34297, 0000000, 2134, 0793, 13946, 387, 12345, 60038, 110981, 20163, 73756, 657, 09821, 7490, 74940, 8754, 86459, 7599, 27037, 47475, 549327, 459245, 47507, 4711118, 84027, 76703, 12345, 98765") #Array.new(20){rand(1..100000)}
 t7 = Theme.create(name: "russian", words: "dobraye,spaseeba, bal'shoye, neechevo, gavareetye, pazhivayesh?, gavaryoo, prasteete, neeploha!, blyad, poluchish, paneemayoo, rooskee, paka, eezveeneete, srashnava")
+t8 = Theme.create(name: "dutch", words: "apetrots, boterham, eekhoorntjesbrood, eekhorn, spiegelei, klokhuis, pindakaas, oorlog, oorbellon, kapsalon, olibollen, tandpasta, handschoenen, monster, schoonmoeder, bakfiets, geluzak, ziekenauto, mulipeer, toiletbril, kikker, wasbeer, vleermuis, zeewolf")
+t9 = Theme.create(name: "americans speaking dutch", words: "kettle, kanoofullin, polizi, muff, dankewal, alshiblief, panekook, slappin, khikhillen, kittlen, khazalach, lecherthang, khawaldakh, tonys, chocoloney, loaves")
 
 
 

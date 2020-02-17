@@ -211,7 +211,7 @@ def stop_music_at_exit
     pid = fork{ system 'killall', 'afplay' }
 end
 
-
+play
 
 
 # update the README
