@@ -1,4 +1,4 @@
-# require_relative 'config/environment'
+# require_relative '../config/environment'
 
 $prompt = TTY::Prompt.new
 $font = TTY::Font.new(:starwars)
@@ -196,6 +196,12 @@ def play_theme_music
     elsif @current_theme.name == "star wars"
         switch_song
         play_music('music/dual_of_fates.mp3')
+    elsif @current_theme.name == "dutch"
+        switch_song
+        play_music('music/dutch.mp3')
+    elsif @current_theme.name == "americans speaking dutch"
+        switch_song
+        play_music('music/dutch.mp3')
     end
 end
 
@@ -210,8 +216,6 @@ end
 def stop_music_at_exit
     pid = fork{ system 'killall', 'afplay' }
 end
-
-play
 
 
 # update the README
